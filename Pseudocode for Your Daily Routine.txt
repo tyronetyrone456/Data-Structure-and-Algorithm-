@@ -1,0 +1,67 @@
+BEGIN
+
+  IF Beans < Amount OR water < Amount THEN
+
+      DISPLAY "Not enough coffee beans or water."
+
+      EXIT
+
+  ENDIF
+
+ 
+
+  IF BeansNotGround THEN
+
+      GRIND Beans
+
+  ENDIF
+
+ 
+
+  BOIL water
+
+ 
+
+  PLACE BeansIntoFilter
+
+  POUR hotWaterOverCoffeeBeans
+
+  WAIT for coffeeToBrew
+
+ 
+
+  POUR brewedCoffeeIntoCup
+
+ 
+
+  DISPLAY "Would you like to add milk or sugar? (yes/no)"
+
+  GET Input
+
+  IF Input = "yes" THEN
+
+      DISPLAY "Add milk, sugar, or both?"
+
+      GET Preference
+
+      IF Preference = "milk" THEN
+
+          ADD milk
+
+      ELSE IF Preference = "sugar" THEN
+
+          ADD sugar
+
+      ELSE IF userPreference = "both" THEN
+
+          ADD milk AND sugar
+
+      ENDIF
+
+  ENDIF
+
+ 
+
+  DISPLAY "Your coffee is ready. Enjoy!"
+
+END
